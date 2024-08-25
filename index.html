@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Calculator</title>
+  <meta name="description" content="Calculator with Normal and Scientific Modes." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="assets/calculator.ico">
+  <link rel="stylesheet" href="styles/dark.css" id="theme" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Toggle button for switching modes -->
+      <div class="mode-toggle">
+        <button type="button" onclick="toggleMode()" id="toggle-mode-button">Switch to Scientific</button>
+      </div>
+      <div class="header-container">
+        <h1 id="toast">Calculator</h1>
+        <div class="top-buttons">
+          <a href="https://github.com/Mohammed-Mu">
+            <img src="assets/GitHubLight.svg" alt="GitHub Icon" height="22.5" width="22.5" id="github-icon">
+          </a>
+          <button type="button" onclick="changeTheme()" class="theme-button">
+            <img src="assets/SunIcon.svg" alt="Theme Icon" height="19" width="19" id="theme-icon">
+          </button>
+        </div>
+      </div>
+      <div class="first-row">
+        <input type="text" name="result" id="result" placeholder="" readonly />
+        <input type="button" value="C" onclick="clearScreen()" id="clear-button" />
+      </div>
+
+
+
+      <!-- Scientific buttons, initially hidden -->
+      <div class="scientific-row" id="scientific-row" style="display: none;">
+        <input type="button" value="√" onclick="handleClick('sqrt(')" />
+        <input type="button" value="x²" onclick="handleClick('^2')" />
+        <input type="button" value="sin" onclick="handleClick('sin(')" />
+        <input type="button" value="cos" onclick="handleClick('cos(')" />
+        <input type="button" value="tan" onclick="handleClick('tan(')" />
+        <input type="button" value="log" onclick="handleClick('log(')" />
+      </div>
+
+      <!-- Normal calculator buttons -->
+      <div class="second-row">
+        <input type="button" value="1" onclick="handleClick(1)" />
+        <input type="button" value="2" onclick="handleClick(2)" />
+        <input type="button" value="3" onclick="handleClick(3)" />
+        <input type="button" value="+" onclick="handleClick('+')" />
+      </div>
+      <div class="third-row">
+        <input type="button" value="4" onclick="handleClick(4)" />
+        <input type="button" value="5" onclick="handleClick(5)" />
+        <input type="button" value="6" onclick="handleClick(6)" />
+        <input type="button" value="-" onclick="handleClick('-')" />
+      </div>
+      <div class="fourth-row">
+        <input type="button" value="7" onclick="handleClick(7)" />
+        <input type="button" value="8" onclick="handleClick(8)" />
+        <input type="button" value="9" onclick="handleClick(9)" />
+        <input type="button" value="x" onclick="handleClick('*')" />
+      </div>
+      <div class="fifth-row">
+        <input type="button" value="/" onclick="handleClick('/')" />
+        <input type="button" value="0" onclick="handleClick(0)" />
+        <input type="button" value="." onclick="handleClick('.')" />
+        <input type="button" value="=" onclick="handleClick('=')" />
+      </div>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+/* CSS Reset & Global Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans';
+  -webkit-appearance: none;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #009688; /* Teal background */
+  transition: 0.8s all;
+}
+
+h1 {
+  margin-bottom: 1.5%;
+  color: #ffffff; /* White color for the title */
+  font-weight: normal;
+}
+
+.container {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.top-buttons {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: 25px;
+  color: #333333; /* Dark grey for text */
+  font-size: 1em;
+  cursor: pointer;
+  width: 70px;
+  background-color: #f5f5f5; /* Light grey background */
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  margin: 0.2em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+  margin-bottom: 4px;
+}
+
+input[type="button"] {
+  color: #ffffff; /* White text for buttons */
+  background-color: #4CAF50; /* Green background for buttons */
+}
+
+input[type="text"] {
+  background-color: #ffffff; /* White background for result display */
+  width: 222.5px;
+}
+
+input[type="button"]:hover {
+  background-color: #3E8E41; /* Darker green on hover */
+  color: #ffffff;
+}
+
+#clear-button {
+  color: #ffffff; /* White text for clear button */
+  background-color: #f44336; /* Red background for clear button */
+}
+
+#clear-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff; /* White color for links */
+}
+
+#github-icon {
+  margin-right: 10px;
+}
+
+.theme-button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* New colors for different rows */
+.second-row input[type="button"] {
+  background-color: #FF9800; /* Orange background for second row buttons */
+}
+
+.second-row input[type="button"]:hover {
+  background-color: #FB8C00; /* Darker orange on hover */
+}
+
+.third-row input[type="button"] {
+  background-color: #03A9F4; /* Light blue background for third row buttons */
+}
+
+.third-row input[type="button"]:hover {
+  background-color: #0288D1; /* Darker blue on hover */
+}
+
+.fourth-row input[type="button"] {
+  background-color: #8E24AA; /* Purple background for fourth row buttons */
+}
+
+.fourth-row input[type="button"]:hover {
+  background-color: #7B1FA2; /* Darker purple on hover */
+}
+
+.fifth-row input[type="button"] {
+  background-color: #FFEB3B; /* Yellow background for fifth row buttons */
+  color: #333333; /* Dark grey text on yellow buttons */
+}
+
+.fifth-row input[type="button"]:hover {
+  background-color: #FDD835; /* Darker yellow on hover */
+}
+
+/* CSS for Mode Toggle */
+.mode-toggle {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%; /* Ensures the container spans the full width */
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  background-color:red; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mode-toggle button:hover {
+  background-color: green;
+}
+
