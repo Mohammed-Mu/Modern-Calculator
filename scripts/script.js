@@ -14,39 +14,31 @@ function playSound() {
 
 function calculate(value) {
   try {
-    if (value.includes('sqrt')) {
-      value = value.replace(/sqrt\(([^)]+)\)/g, 'Math.sqrt($1)');
-    }
-    if (value.includes('sin')) {
-      value = value.replace(/sin\(([^)]+)\)/g, 'Math.sin($1 * Math.PI / 180)');
-    }
-    if (value.includes('cos')) {
-      value = value.replace(/cos\(([^)]+)\)/g, 'Math.cos($1 * Math.PI / 180)');
-    }
-    if (value.includes('tan')) {
-      value = value.replace(/tan\(([^)]+)\)/g, 'Math.tan($1 * Math.PI / 180)');
-    }
-    if (value.includes('log')) {
-      value = value.replace(/log\(([^)]+)\)/g, 'Math.log10($1)');
-    }
-    if (value.includes('^')) {
-      value = value.replace(/(\d+)\^(\d+)/g, 'Math.pow($1, $2)');
-    }
+    // Replace mathematical functions with their JavaScript equivalents
+    value = value.replace(/sqrt\(([^)]+)\)/g, 'Math.sqrt($1)')
+                 .replace(/sin\(([^)]+)\)/g, 'Math.sin($1 * Math.PI / 180)')
+                 .replace(/cos\(([^)]+)\)/g, 'Math.cos($1 * Math.PI / 180)')
+                 .replace(/tan\(([^)]+)\)/g, 'Math.tan($1 * Math.PI / 180)')
+                 .replace(/log\(([^)]+)\)/g, 'Math.log10($1)')
+                 .replace(/(\d+)\^(\d+)/g, 'Math.pow($1, $2)');
+
     const calculatedValue = eval(value || null);
+
     if (isNaN(calculatedValue)) {
-      res.value = "Error";
-      setTimeout(() => {
-        res.value = "";
-      }, 1300);
+      showError();
     } else {
       res.value = calculatedValue;
     }
   } catch (error) {
-    res.value = "Error";
-    setTimeout(() => {
-      res.value = "";
-    }, 1300);
+    showError();
   }
+}
+
+function showError() {
+  res.value = "Error";
+  setTimeout(() => {
+    res.value = "";
+  }, 1300);
 }
 
 function clearScreen() {
@@ -55,9 +47,6 @@ function clearScreen() {
 }
 
 function handleClick(enteredValue) {
-  if (!res.value) {
-    res.value = "";
-  }
   if (enteredValue === '=') {
     calculate(res.value);
   } else if (enteredValue === '^2') {
@@ -73,6 +62,7 @@ function changeTheme() {
   setTimeout(() => {
     toast.innerHTML = "Integrated Calculator";
   }, 1500);
+
   if (theme.getAttribute("href") === lightTheme) {
     theme.setAttribute("href", darkTheme);
     themeIcon.setAttribute("src", sunIcon);
@@ -105,6 +95,7 @@ document.addEventListener("keydown", keyboardInputHandler);
 
 function keyboardInputHandler(e) {
   e.preventDefault();
+
   if (e.key >= 0 && e.key <= 9) {
     res.value += e.key;
   }

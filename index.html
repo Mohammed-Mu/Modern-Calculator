@@ -37,16 +37,16 @@
         <input type="button" value="C" onclick="clearScreen()" id="clear-button" />
       </div>
 
-
-
       <!-- Scientific buttons, initially hidden -->
       <div class="scientific-row" id="scientific-row" style="display: none;">
         <input type="button" value="√" onclick="handleClick('sqrt(')" />
-        <input type="button" value="x²" onclick="handleClick('^2')" />
+        <input type="button" value="x²" onclick="handleClick('**2')" />
         <input type="button" value="sin" onclick="handleClick('sin(')" />
         <input type="button" value="cos" onclick="handleClick('cos(')" />
         <input type="button" value="tan" onclick="handleClick('tan(')" />
         <input type="button" value="log" onclick="handleClick('log(')" />
+        <input type="button" value="(" onclick="handleClick('(')" /> <!-- Added "(" button -->
+        <input type="button" value=")" onclick="handleClick(')')" />
       </div>
 
       <!-- Normal calculator buttons -->
@@ -72,7 +72,7 @@
         <input type="button" value="/" onclick="handleClick('/')" />
         <input type="button" value="0" onclick="handleClick(0)" />
         <input type="button" value="." onclick="handleClick('.')" />
-        <input type="button" value="=" onclick="handleClick('=')" />
+        <input type="button" value="=" onclick="handleClick('=')" /> <!-- Ensure "=" works -->
       </div>
     </div>
   </div>
